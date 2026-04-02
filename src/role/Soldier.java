@@ -7,20 +7,34 @@
  * This is free software, licensed under the GNU General Public License v3.
  * See http://www.gnu.org/licenses/gpl.html for more information.
  */
- 
-/**
- * 
- */
 
-package role; //Package declaration.
+package role;
 
-/**
- * 
- */
+public class Soldier extends Role {
 
-public class Soldier {
-	public static void main(String args[]) {
+    public Soldier(float posX, float posY) {
+        super(posX, posY);
+    }
 
-	}
+    @Override
+    public void move() {
+        if (isAvailable() && getEnergy() >= Utils.ENERGY_MOVE) {
+            setPosX(getPosX() + Utils.SOLDIER_MOVE);
+            setEnergy(getEnergy() - Utils.ENERGY_MOVE);
+        }
+    }
+
+    @Override
+    public void jump() {
+        if (isAvailable() && getEnergy() >= Utils.ENERGY_JUMP) {
+            setPosY(getPosY() + Utils.SOLDIER_JUMP);
+            setEnergy(getEnergy() - Utils.ENERGY_JUMP);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Outlander -> " + super.toString();
+    }
 }
 
