@@ -34,7 +34,7 @@ public class Soldier extends Role {
 
     @Override
     public String toString() {
-        return "Outlander -> " + super.toString();
+        return "Soldier -> " + super.toString();
     }
 }
 

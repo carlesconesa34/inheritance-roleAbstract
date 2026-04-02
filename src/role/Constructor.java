@@ -33,7 +33,7 @@ public class Constructor extends Role {
 
     @Override
     public String toString() {
-        return "Outlander -> " + super.toString();
+        return "Constructor -> " + super.toString();
     }
 }
 
