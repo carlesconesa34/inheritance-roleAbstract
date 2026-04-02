@@ -18,17 +18,17 @@ public class Outlander extends Role {
 
     @Override
     public void move() {
-        if (isAvailable() && getEnergy() >= 0.5f) {
-            setPosX(getPosX() + 8.5f);
-            setEnergy(getEnergy() - 0.5f);
+        if (isAvailable() && getEnergy() >= Utils.ENERGY_MOVE) {
+            setPosX(getPosX() + Utils.OUTLANDER_MOVE);
+            setEnergy(getEnergy() - Utils.ENERGY_MOVE);
         }
     }
 
     @Override
     public void jump() {
-        if (isAvailable() && getEnergy() >= 1.0f) {
-            setPosY(getPosY() + 6.2f);
-            setEnergy(getEnergy() - 1.0f);
+        if (isAvailable() && getEnergy() >= Utils.ENERGY_JUMP) {
+            setPosY(getPosY() + Utils.OUTLANDER_JUMP);
+            setEnergy(getEnergy() - Utils.ENERGY_JUMP);
         }
     }
 
