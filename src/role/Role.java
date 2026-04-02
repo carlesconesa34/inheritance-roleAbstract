@@ -17,7 +17,7 @@ public abstract class Role {
 	private float posY;
 	private boolean available = true;
 	private byte lifes = 3;
-	private float energy = 100;
+	private float energy = 100.0f;
 	
 	public Role(float posX, float posY) {
 		this.posX = posX;
@@ -128,30 +128,30 @@ public abstract class Role {
 	}
 
 	public final void extraMove() {
-		if(available && energy >= 2){
-			posX += 20.5;
-			energy -= 2;
+		if(available && energy >= 2.0f){
+			posX += 20.5f;
+			energy -= 2.0f;
 		}
 	}
 
 	public final void extraJump() {
-		if(available && energy >= 4){
-			posX += 25.2;
-			energy -= 4;
+		if(available && energy >= 4.0f){
+			posX += 25.2f;
+			energy -= 4.0f;
 		}
 	}
 
 	public final void resetPosition() {
-		setPosX(0);
-		setPosY(0);
+		posX = 0.0f;
+		posY = 0.0f;
 	}
 
 	public final void resetRole() {
-		setPosX(0);
-		setPosY(0);
-		setAvailable(true);
-		setLifes(3);
-		setEnergy(100);
+		posX = 0.0f;
+		posY = 0.0f;
+		available = true;
+		lifes = 3;
+		energy = 100.0f;
 	}
 
 	public final boolean decreaseLife() {
