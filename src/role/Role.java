@@ -17,10 +17,19 @@ package role; //Package declaration.
 /**
  * 
  */
-
-public class Role {
-	public static void main(String args[]) {
-
-	}
+public abstract class Role {
+	private float posX;
+	private float posY;
+	private boolean available = true;
+	private byte lifes = 3;
+	private float energy = 100;
+	
+	public Role(float posX, float posY) {
+		this.posX = posX;
+		this.posY = posY;
+	} 
+	
+	public abstract void move();
+	public abstract void jump();
 }
 
