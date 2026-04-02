@@ -7,20 +7,33 @@
  * This is free software, licensed under the GNU General Public License v3.
  * See http://www.gnu.org/licenses/gpl.html for more information.
  */
- 
-/**
- * 
- */
+package role;
 
-package role; //Package declaration.
+public class Constructor extends Role {
 
-/**
- * 
- */
+    public Constructor(float posX, float posY) {
+        super(posX, posY);
+    }
 
-public class Constructor {
-	public static void main(String args[]) {
+    @Override
+    public void move() {
+        if (isAvailable() && getEnergy() >= Utils.ENERGY_MOVE) {
+            setPosX(getPosX() + Utils.CONSTRUCTOR_MOVE);
+            setEnergy(getEnergy() - Utils.ENERGY_MOVE);
+        }
+    }
 
-	}
+    @Override
+    public void jump() {
+        if (isAvailable() && getEnergy() >= Utils.ENERGY_JUMP) {
+            setPosY(getPosY() + Utils.CONSTRUCTOR_JUMP);
+            setEnergy(getEnergy() - Utils.ENERGY_JUMP);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Outlander -> " + super.toString();
+    }
 }
 
