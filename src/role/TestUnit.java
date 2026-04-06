@@ -128,7 +128,7 @@ class TestUnit {
 		outlander.extraJump();
 		assertEquals(2, outlander.getEnergy(), 0.1);
 
-		//Impossible to jump because energy is 2 and it needs 4
+		// Impossible to jump because energy is 2 and it needs 4
 		outlander.extraJump();
 		assertEquals(2, outlander.getEnergy(), 0.1);
 
