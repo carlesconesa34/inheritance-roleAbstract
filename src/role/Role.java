@@ -10,21 +10,59 @@
 
 package role;
 /**
+ * Abstract base class representing a generic role (character) in a game.
  *
+ * @author Carles Conesa
+ * @version 1.0
+ * @since 2026-04-02
  */
 public abstract class Role {
+
+	/** Horizontal position of the role on the 2-D plane. */
 	private float posX;
+
+	/** Vertical position of the role on the 2-D plane. */
 	private float posY;
+
+	/**
+     * Indicates whether the role is currently active and able to perform
+     * actions. Defaults to true.
+     */
 	private boolean available = true;
+
+	/**
+     * Number of lives remaining for this role.
+     * The value is initialised to 3.
+     */
 	private byte lifes = 3;
+
+	/**
+     * Current energy level of the role, expressed as a percentage.
+     * Defaults to 100. Certain actions consume energy; the role
+     * cannot perform them if it lacks sufficient energy.
+     */
 	private float energy = 100.0f;
 	
+	/**
+     * Creates a new Role at the specified position on the 2-D plane.
+     *
+     * @param posX initial horizontal position
+     * @param posY initial vertical position
+     */
 	public Role(float posX, float posY) {
 		this.posX = posX;
 		this.posY = posY;
 	}
-	
+
+	/**
+     * Moves the role according to the specific logic defined by each subclass.
+     */
 	public abstract void move();
+
+	/**
+     * Makes the role jump according to the specific logic defined by each
+     * subclass.
+     */
 	public abstract void jump();
 
 	/**
@@ -118,15 +156,22 @@ public abstract class Role {
 	}
 
 	/**
-	 * Returns a string representation of this object.
+	 * Returns a string representation of this role.
 	 *
-	 * @return a string representation of the object
+	 * @return a string representation of the role
 	 */
 	@Override
 	public String toString() {
 		return "Role{posX=" + posX + ", posY=" + posY + ", available=" + available + ", lifes=" + lifes + ", energy=" + energy + "}";
 	}
 
+	/**
+     * Performs an extra horizontal movement, advancing the role 20.5
+     * units along the X axis and consuming 2 energy points.
+     *
+     * This action is only executed when the role is available and has at
+     * least 2.0 energy points remaining.
+     */
 	public final void extraMove() {
 		if(available && energy >= 2.0f){
 			posX += 20.5f;
@@ -134,18 +179,34 @@ public abstract class Role {
 		}
 	}
 
+	/**
+     * Performs an extra jump, advancing the role 25.2 units along the
+     * Y axis and consuming 4 energy points.
+     *
+     * This action is only executed when the role is available and has at
+     * least 4 energy points remaining.</p>
+     */
 	public final void extraJump() {
 		if(available && energy >= 4.0f){
-			posX += 25.2f;
+			posY += 25.2f;
 			energy -= 4.0f;
 		}
 	}
 
+	/**
+     * Resets the role's position to the origin.
+     *
+     * This method does not alter any other state such as lives, energy or
+     * availability.</p>
+     */
 	public final void resetPosition() {
 		posX = 0.0f;
 		posY = 0.0f;
 	}
 
+	/**
+     * Fully resets the role to its initial state.
+     */
 	public final void resetRole() {
 		posX = 0.0f;
 		posY = 0.0f;
@@ -154,6 +215,13 @@ public abstract class Role {
 		energy = 100.0f;
 	}
 
+	/**
+     * Decrements the role's life count by one if the role is available and has
+     * at least one life remaining.
+     *
+     * @return true if the life was successfully decremented;
+     *         false if the role is unavailable or has no lives left
+     */
 	public final boolean decreaseLife() {
 		if(available && lifes >= 1 ){
 			lifes--;
@@ -163,6 +231,14 @@ public abstract class Role {
 		}
 	}
 
+	/**
+     * Increments the role's life count by one if the role is available and has
+     * not yet reached the maximum of three lives.
+     *
+     * @return true if the life was successfully incremented;
+     *         false if the role is unavailable or already has three
+     *         lives
+     */
 	public final boolean increaseLife() {
 		if(available && lifes < 3){
 			lifes++;
@@ -172,4 +248,3 @@ public abstract class Role {
 		}
 	}
 }
-
