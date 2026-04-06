@@ -4,9 +4,10 @@
  *
  * ©Copyright 2026 Carles Conesa <a251158cc@correu.escoladeltreball.org>
  *
- * This is free software, licensed under the GNU General Public License v3.
- * See http://www.gnu.org/licenses/gpl.html for more information.
+ * This is free software, licensed under the MIT License.
+ * See https://opensource.org/licenses/MIT for more information.
  */
+
 package role;
 
 /**

@@ -1,11 +1,14 @@
-package role;
+/*
+ * TestRunner.java Apr 2, 2026
+ *
+ *
+ * ©Copyright 2026 Carles Conesa <a251158cc@correu.escoladeltreball.org>
+ *
+ * This is free software, licensed under the MIT License.
+ * See https://opensource.org/licenses/MIT for more information.
+ */
 
-import org.junit.platform.launcher.Launcher;
-import org.junit.platform.launcher.LauncherDiscoveryRequest;
-import org.junit.platform.launcher.core.LauncherFactory;
-import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
-import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
-import org.junit.platform.engine.discovery.DiscoverySelectors;
+package role;
 
 public class TestRunner {
     public static void main(String[] args) throws Exception {
