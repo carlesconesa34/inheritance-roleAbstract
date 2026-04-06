@@ -20,28 +20,28 @@ package role;
 public abstract class Role {
 
 	/** Horizontal position of the role on the 2-D plane. */
-	private float posX;
+	protected float posX;
 
 	/** Vertical position of the role on the 2-D plane. */
-	private float posY;
+	protected float posY;
 
 	/**
 	 * Indicates whether the role is currently active and able to perform actions.
 	 * Defaults to true.
 	 */
-	private boolean available = true;
+	protected boolean available = true;
 
 	/**
 	 * Number of lives remaining for this role. The value is initialised to 3.
 	 */
-	private byte lifes = 3;
+	protected byte lifes = 3;
 
 	/**
 	 * Current energy level of the role, expressed as a percentage. Defaults to 100.
 	 * Certain actions consume energy; the role cannot perform them if it lacks
 	 * sufficient energy.
 	 */
-	private float energy = 100.0f;
+	protected float energy = 100.0f;
 
 	/**
 	 * Creates a new Role at the specified position on the 2-D plane.
