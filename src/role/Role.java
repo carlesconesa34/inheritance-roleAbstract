@@ -137,7 +137,9 @@ public abstract class Role {
      * @param lifes the lifes to set
      */
     public void setLifes(byte lifes) {
-        this.lifes = lifes;
+        if (lifes >= 0 && lifes <= Utils.LIFES) {
+            this.lifes = lifes;
+        }
     }
 
     /**
