@@ -177,9 +177,9 @@ public abstract class Role {
      * 2.0 energy points remaining.
      */
     public final void extraMove() {
-        if (available && energy >= 2.0f) {
-            posX += 20.5f;
-            energy -= 2.0f;
+        if (available && energy >= Utils.EXTRA_ENERGY_MOVE) {
+            posX += Utils.EXTRA_MOVE;
+            energy -= Utils.EXTRA_ENERGY_MOVE;
         }
     }
 
@@ -191,9 +191,9 @@ public abstract class Role {
      * 4 energy points remaining.
      */
     public final void extraJump() {
-        if (available && energy >= 4.0f) {
-            posY += 25.2f;
-            energy -= 4.0f;
+        if (available && energy >= Utils.EXTRA_ENERGY_JUMP) {
+            posY += Utils.EXTRA_ENERGY_JUMP;
+            energy -= Utils.EXTRA_ENERGY_JUMP;
         }
     }
 
